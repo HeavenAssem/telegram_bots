@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 # This is helloworld telegram bot example
@@ -6,13 +7,13 @@
 import sys
 import telepot
 
-def handle(msg):
-    user_id = msg[u'chat'][u'id']
-    TelegramBot.sendMessage(user_id, "Hello world!")
-
 def main(token):
+    def handle(msg):
+        user_id = msg[u'chat'][u'id']
+        bot.sendMessage(user_id, "Hello world!")
+
     bot = telepot.Bot(token)
-    print TelegramBot.getMe()
+    print bot.getMe()
     bot.message_loop(handle)
     
     try:
@@ -21,14 +22,9 @@ def main(token):
     except KeyboardInterrupt:
         print("\nGood bye!")
 
-
-
-
-
-
-if __name__ == "__main_":
-    if sys.argc != 2:
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
         print("You should pass token as cl parameter")
         exit()
 
-    main(token)
+    main(sys.argv[1])
