@@ -1,0 +1,19 @@
+commands:
+
+start - start interacting with bot
+create <black/white> - start new game
+play - start playing the game
+
+move <move> - make a move
+
+gameline:
+
+start
+create <side>
+play
+
+move <move1>
+move <move2> 
+...
+
+
