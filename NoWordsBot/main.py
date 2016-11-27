@@ -37,7 +37,7 @@ chessEngine = chess.uci.popen_engine("/home/user/stockfish-7-linux/Linux/stockfi
 chessEngine.uci()
 
 
-token = '182028321:AAHUwR3W6wtTtN8tkUQf7MVkBIZlkMverXk'
+token = sys.argv[sys.argc-1]
 TelegramBot = telepot.Bot(token)
 print TelegramBot.getMe()
 
